@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context path="/opc" crossContext="true" reloadable="true" debug="1">
+    <Resource
+            name="jdbc/opcdemo"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="oracle.jdbc.OracleDriver"
+            url="jdbc:oracle:thin:@160.34.12.29:1521:orcl"
+            username="opcdemo"
+            password="opcdemo123"
+            connectionProperties="SetBigStringTryClob=true"
+            accessToUnderlyingConnectionAllowed="true"
+            maxTotal="60"
+            maxIdle="20"
+            maxWaitMillis="10000"
+    />
+</Context>
