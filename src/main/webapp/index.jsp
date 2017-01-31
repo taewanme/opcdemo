@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="java.net.InetAddress" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,15 +12,15 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>오라클 클라아드 서비</title>
+    <title>오라클 클라아드 서비 - <%= request.getRemoteAddr() %></title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="./resources/css/justfied-nav.css" rel="stylesheet">
-    <link href="./resources/css/sticky-footer.css" rel="stylesheet">
+    <link href="./css/justfied-nav.css" rel="stylesheet">
+    <link href="./css/sticky-footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,17 +29,16 @@
 
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
+
     <div class="masthead">
-        <h3 class="text-muted">Oracle Cloud</h3>
+    <h3 class="text-muted">Oracle Cloud: <%= InetAddress.getLocalHost().getHostName() %></h3>
         <nav>
             <ul class="nav nav-justified">
                 <li class="nav-item"><a class="nav-link active" href="#">홈</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">SaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">PaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">IaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">클라우드 마켓플레이스</a></li>
-                <li class="nav-item"><a class="nav-link" href="./employee">신규채용</a></li>
-                <li class="nav-item"><a class="nav-link" href="./login">관리자</a></li>
+                <li class="nav-item"><a class="nav-link" href="./non-css.jsp">without css</a></li>
+                <li class="nav-item"><a class="nav-link" href="./html.zip">download</a></li>
+                <li class="nav-item"><a class="nav-link" href="./employee.jsp">신규채용</a></li>
+                <li class="nav-item"><a class="nav-link" href="./login.jsp">관리자</a></li>
             </ul>
         </nav>
     </div>

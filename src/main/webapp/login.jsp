@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -20,25 +19,25 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="./resources/css/justfied-nav.css" rel="stylesheet">
-    <link href="./resources/css/sticky-footer.css" rel="stylesheet">
-    <link href="./resources/css/signin.css" rel="stylesheet">
+    <link href="./css/justfied-nav.css" rel="stylesheet">
+    <link href="./css/sticky-footer.css" rel="stylesheet">
+    <link href="./css/signin.css" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container">
     <div class="masthead">
-        <h3 class="text-muted">Oracle Cloud</h3>
+        <h3 class="text-muted">Oracle Cloud: <%= request.getRemoteAddr() %></h3>
         <nav>
             <ul class="nav nav-justified">
-                <li class="nav-item"><a class="nav-link" href="index">홈</a></li>
+                <li class="nav-item"><a class="nav-link" href="./index.jsp">홈</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">SaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">PaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">IaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">클라우드 마켓플레이스</a></li>
-                <li class="nav-item"><a class="nav-link" href="employee">신규채용</a></li>
-                <li class="nav-item"><a class="nav-link active" href="login">관리자</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">마켓플레이스</a></li>
+                <li class="nav-item"><a class="nav-link" href="./employee.jsp">신규채용</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./login.jsp">관리자</a></li>
             </ul>
         </nav>
     </div>

@@ -18,8 +18,8 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="./resources/css/justfied-nav.css" rel="stylesheet">
-    <link href="./resources/css/sticky-footer.css" rel="stylesheet">
+    <link href="./css/justfied-nav.css" rel="stylesheet">
+    <link href="./css/sticky-footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,16 +29,16 @@
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
     <div class="masthead">
-        <h3 class="text-muted">Oracle Cloud</h3>
+        <h3 class="text-muted">Oracle Cloud: <%= request.getRemoteAddr() %></h3>
         <nav>
             <ul class="nav nav-justified">
-                <li class="nav-item"><a class="nav-link " href="index">홈</a></li>
+                <li class="nav-item"><a class="nav-link " href="./index.jsp">홈</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">SaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">PaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">IaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">클라우드 마켓플레이스</a></li>
-                <li class="nav-item"><a class="nav-link active" href="employee">신규채용</a></li>
-                <li class="nav-item"><a class="nav-link" href="login">관리자</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">마켓플레이스</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./employee.jsp">신규채용</a></li>
+                <li class="nav-item"><a class="nav-link" href="./login.jsp">관리자</a></li>
             </ul>
         </nav>
     </div>
@@ -52,7 +52,7 @@
             통과하신 분께 우선적으로 연락 드리도록 하겠습니다.
         </p>
         <div class="text-xs-center">
-            <img src="./resources/images/oraclelogo.jpeg" class="rounded" alt="oracle logo">
+            <img src="./images/oraclelogo.jpeg" class="rounded" alt="oracle logo">
         </div>
     </div>
     <div class="card">
@@ -60,13 +60,13 @@
             지원자 정보 입력
         </div>
         <div class="card-block">
-            <form>
+            <form method="post" action="${pageContext.request.contextPath}/employee">
             <div class="row">
                 <div class="col-lg-offset-3 col-lg-6">
                     <div class="form-group">
                         <label for="name" class="col-xs-2 col-form-label">이름</label>
                         <div class="col-xs-10">
-                            <input class="form-control" type="text" value="" id="name">
+                            <input class="form-control" type="text" value="" name="name">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="mail">
                         <label for="example-text-input1" class="col-xs-2 col-form-label">E-mail</label>
                         <div class="col-xs-10">
-                            <input class="form-control" type="text" value="" id="mail">
+                            <input class="form-control" type="text" value="" name="email" id="email">
                         </div>
                     </div>
                 </div>
@@ -85,18 +85,18 @@
                     <div class="form-group">
                         <label for="job" class="col-xs-2 col-form-label">지원분야</label>
                         <div class="col-xs-10">
-                            <select class="custom-select" id="job">
+                            <select class="custom-select" name="department">
                                 <option selected>지원 분야를 선택해 주세요</option>
-                                <option value="1">마케팅 및 PR</option>
-                                <option value="2">솔루션 아키텍트</option>
-                                <option value="3">전문 서비스 전문가</option>
-                                <option value="4">운영 엔지니어 및 데이터 센터</option>
-                                <option value="5">시스템, 품질 및 보안 엔지니어링</option>
-                                <option value="6">사용자 경험</option>
-                                <option value="7">영업 및 계정 관리</option>
-                                <option value="8">소프트웨어 개발 엔지니어 및 관리자</option>
-                                <option value="9">기술 제품 및 프로그램 관리자</option>
-                                <option value="10">비즈니스 개발 및 파트너 네트워크</option>
+                                <option value="마케팅 및 PR">마케팅 및 PR</option>
+                                <option value="솔루션 아키텍트">솔루션 아키텍트</option>
+                                <option value="전문 서비스 전문가">전문 서비스 전문가</option>
+                                <option value="운영 엔지니어 및 데이터 센터">운영 엔지니어 및 데이터 센터</option>
+                                <option value="시스템, 품질 및 보안 엔지니어링">시스템, 품질 및 보안 엔지니어링</option>
+                                <option value="사용자 경험">사용자 경험</option>
+                                <option value="영업 및 계정 관리">영업 및 계정 관리</option>
+                                <option value="소프트웨어 개발 엔지니어 및 관리자">소프트웨어 개발 엔지니어 및 관리자</option>
+                                <option value="기술 제품 및 프로그램 관리자">기술 제품 및 프로그램 관리자</option>
+                                <option value="비즈니스 개발 및 파트너 네트워크">비즈니스 개발 및 파트너 네트워크</option>
                             </select>
                         </div>
                     </div>
@@ -106,12 +106,12 @@
                         <label for="sex" class="col-xs-2 col-form-label">성별</label>
                         <div class="col-xs-10">
                             <label class="custom-control custom-radio">
-                                <input id="sex1" name="male" type="radio" class="custom-control-input" value="mail">
+                                <input id="sex1" name="sex" type="radio" class="custom-control-input" value="남성">
                                 <span class="custom-control-indicator"></span>
                                 <span class="custom-control-description">남성</span>
                             </label>
                             <label class="custom-control custom-radio">
-                                <input id="sex2" name="female" type="radio" class="custom-control-input" value="femail">
+                                <input id="sex2" name="sex" type="radio" class="custom-control-input" value="여성">
                                 <span class="custom-control-indicator"></span>
                                 <span class="custom-control-description">여성</span>
                             </label>
@@ -132,7 +132,7 @@
                 <div class="col-lg-offset-3 col-lg-6">
                     <label for="birth" class="col-xs-2 col-form-label">생년월일</label>
                     <div class="col-xs-10">
-                        <input class="form-control" type="date" value="" id="birth">
+                        <input class="form-control" type="date" value="" name="birth" id="birth">
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <div class="form-group">
                         <label for="phone" class="col-xs-2 col-form-label">전화번호</label>
                         <div class="col-xs-10">
-                            <input class="form-control" type="text" value="" id="phone">
+                            <input class="form-control" type="text" value="" name="phone" id="phone">
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                     <div class="form-group">
                         <label for="address" class="col-xs-2 col-form-label">주소</label>
                         <div class="col-xs-10">
-                            <input class="form-control" type="text" value="" id="address">
+                            <input class="form-control" type="text" name="address" value="" id="address">
                         </div>
                     </div>
                 </div>

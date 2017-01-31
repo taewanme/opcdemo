@@ -18,8 +18,8 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="./resources/css/justfied-nav.css" rel="stylesheet">
-    <link href="./resources/css/sticky-footer.css" rel="stylesheet">
+    <link href="./css/justfied-nav.css" rel="stylesheet">
+    <link href="./css/sticky-footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,16 +29,16 @@
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
     <div class="masthead">
-        <h3 class="text-muted">Oracle Cloud</h3>
+        <h3 class="text-muted">Oracle Cloud: <%= request.getRemoteAddr() %></h3>
         <nav>
             <ul class="nav nav-justified">
-                <li class="nav-item"><a class="nav-link" href="index">홈</a></li>
+                <li class="nav-item"><a class="nav-link" href="./index.jsp">홈</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">SaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">PaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">IaaS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">클라우드 마켓플레이스</a></li>
-                <li class="nav-item"><a class="nav-link" href="employee">신규채용</a></li>
-                <li class="nav-item"><a class="nav-link active" href="login">관리자</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">마켓플레이스</a></li>
+                <li class="nav-item"><a class="nav-link" href="./employee.jsp">신규채용</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./login.jsp">관리자</a></li>
             </ul>
         </nav>
     </div>
@@ -47,7 +47,7 @@
         <h1>채용 공고</h1>
         <p class="lead">지원자 목록</p>
         <div class="text-xs-center">
-            <img src="./resources/images/oraclelogo.jpeg" class="rounded" alt="oracle logo">
+            <img src="./images/oraclelogo.jpeg" class="rounded" alt="oracle logo">
         </div>
     </div>
     <div class="card">
@@ -58,7 +58,6 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
                     <th>성명</th>
                     <th>E-mail</th>
                     <th>생일</th>
@@ -66,44 +65,20 @@
                     <th>주소</th>
                     <th>성별</th>
                     <th>전화번호</th>
-                    <th>사진</th>
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach items="${applicants}" var="item">
                 <tr>
-                    <th scope="row">1</th>
-                    <td>김태완</td>
-                    <td>taewan.kim@oracle.com</td>
-                    <td>74.06.23</td>
-                    <td>기술지원</td>
-                    <td>서울 강남구 삼성도 아셈타워</td>
-                    <td>남성</td>
-                    <td>010-3443-9978</td>
-                    <td>taewan.jpg</td>
-
+                    <td>${item.name}</td>
+                    <td>${item.email}</td>
+                    <td>${item.birth}</td>
+                    <td>${item.department}</td>
+                    <td>${item.address}</td>
+                    <td>${item.sex}</td>
+                    <td>${item.phone}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>김태완</td>
-                    <td>taewan.kim@oracle.com</td>
-                    <td>74.06.23</td>
-                    <td>기술지원</td>
-                    <td>서울</td>
-                    <td>남성</td>
-                    <td>010-3443-9978</td>
-                    <td>taewan.jpg</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>김태완</td>
-                    <td>taewan.kim@oracle.com</td>
-                    <td>74.06.23</td>
-                    <td>기술지원</td>
-                    <td>서울</td>
-                    <td>남성</td>
-                    <td>010-3443-9978</td>
-                    <td>taewan.jpg</td>
-                </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

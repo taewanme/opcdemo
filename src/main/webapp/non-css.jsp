@@ -12,14 +12,6 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>오라클 클라아드 서비</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Custom styles for this template -->
-    <link href="./css/justfied-nav.css" rel="stylesheet">
-    <link href="./css/sticky-footer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,10 +21,10 @@
     <!-- The justified navigation menu is meant for single line per list item.
          Multiple lines will require custom code not provided by Bootstrap. -->
     <div class="masthead">
-        <h3 class="text-muted">Oracle Cloud</h3>
+        <h3 class="text-muted">Oracle Cloud: <%= request.getRemoteAddr() %></h3>
         <nav>
             <ul class="nav nav-justified">
-                <li class="nav-item"><a class="nav-link active" href="#">홈</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./index.jsp">홈</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">SaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">PaaS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">IaaS</a></li>
